@@ -10,7 +10,7 @@
 :root{color-scheme:dark;--bg:#10110f;--panel:#1c1e1a;--ink:#f4f1e9;--muted:#b4b7ad;--accent:#d8be8a;--line:#42463b}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 'Segoe UI',sans-serif;overflow:hidden}button,input,a{touch-action:manipulation}button,input{font:inherit}button,a,input{outline-offset:5px} :focus-visible{outline:2px solid var(--accent)}::selection{background:var(--accent);color:var(--bg)}a{color:var(--accent);text-underline-offset:4px}button{color:var(--ink);background:none;border:1px solid transparent;border-radius:5px;cursor:pointer;min-height:44px;padding:8px 12px}button:hover{background:#30332b}button:disabled{opacity:.35;cursor:default}button[aria-pressed=true]{background:#414638}svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
 #stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;overflow:auto;touch-action:pan-y pinch-zoom;scrollbar-color:var(--line) var(--bg)}#art{display:block;width:100%;height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none}#stage.zoom{display:block}#stage.zoom #art{width:100%;height:auto;max-width:none;min-height:0}#stage.loading #art{visibility:hidden}
-.chrome{position:fixed;z-index:3;transition:opacity .25s ease-out}header{top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px;background:var(--bg)}.brand{display:flex;align-items:baseline;gap:14px}.brand strong{font:24px Georgia,serif;letter-spacing:.025em}.brand a{font-size:12px;color:var(--muted);text-decoration:none}.tools{display:flex;align-items:center;gap:5px}.tool-label{margin-left:7px}.quiet .chrome{opacity:0;pointer-events:none}.quiet{cursor:none}.quiet:has(.chrome :focus-visible) .chrome{opacity:1;pointer-events:auto}.quiet:has(.chrome :focus-visible){cursor:auto}
+.chrome{position:fixed;z-index:3;transition:opacity .25s ease-out}header{top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px;background:var(--bg)}.brand{display:flex;align-items:baseline;gap:14px}.brand strong{font:24px Georgia,serif;letter-spacing:.025em}.brand a{font-size:12px;color:var(--muted);text-decoration:none}.tools{display:flex;align-items:center;gap:5px}.tool-label{margin-left:7px}.quiet .chrome{opacity:0;pointer-events:none}.quiet{cursor:none}.reading .chrome{transition:none}.quiet:has(.chrome :focus-visible) .chrome{opacity:1;pointer-events:auto}.quiet:has(.chrome :focus-visible){cursor:auto}
 footer{bottom:0;left:0;right:0;padding:10px 24px 14px;background:var(--bg)}.transport{display:flex;align-items:center;justify-content:center;gap:12px}.counter{display:flex;align-items:center;gap:8px;font-variant-numeric:tabular-nums;color:var(--muted)}#page{width:64px;height:38px;background:transparent;border:1px solid var(--line);border-radius:4px;color:var(--ink);text-align:center;appearance:textfield}#page::-webkit-inner-spin-button{appearance:none}#scrubber{width:100%;height:16px;margin:6px 0 0;accent-color:var(--accent);cursor:pointer}.hint{position:absolute;left:24px;top:22px;font-size:12px;color:var(--muted)}#position{position:absolute;right:24px;top:22px;font-size:12px;color:var(--muted)}
 #message{position:fixed;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%);max-width:90vw;text-align:center;background:var(--panel);padding:18px 24px;border-radius:8px}#message[hidden]{display:none}#retry{border-color:var(--line);margin-top:8px}#help{position:fixed;z-index:5;right:24px;top:72px;width:min(380px,calc(100vw - 32px));padding:24px;max-height:calc(100dvh - 96px);overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:8px}#help[hidden]{display:none}#help h1{font:28px Georgia,serif;margin:0 0 16px}#help p{color:var(--muted)}#closeHelp{position:absolute;right:10px;top:10px}dl{display:grid;grid-template-columns:1fr auto;gap:10px 22px;margin:0}dt{color:var(--muted)}dd{margin:0;text-align:right}kbd{font:inherit;color:var(--ink)}.small{font-size:12px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 @media(max-width:650px){header{padding:10px 12px}.brand{display:block}.brand strong{font-size:22px}.brand a{display:block;font-size:11px}.tool-label{display:none}.tools{gap:0}button{padding:8px 10px}footer{padding:10px 12px}.hint{display:none}#position{right:12px;top:23px}#help{right:16px;top:80px}.transport{gap:6px}}
@@ -32,7 +32,7 @@ footer{bottom:0;left:0;right:0;padding:10px 24px 14px;background:var(--bg)}.tran
  <h1>Settle into the story.</h1>
  <dl><dt>Next page</dt><dd><kbd>→</kbd> / left-click</dd><dt>Previous page</dt><dd><kbd>←</kbd> / right-click</dd><dt>Full screen</dt><dd><kbd>F</kbd></dd><dt>Fit width / fit page</dt><dd><kbd>Z</kbd></dd><dt>Show / hide controls</dt><dd><kbd>H</kbd></dd><dt>First / last page</dt><dd><kbd>Home</kbd> / <kbd>End</kbd></dd></dl>
  <p>On touchscreens, swipe left or right. In fit-width mode, scroll to explore a page; use the arrows to turn it.</p>
- <p>Your place is saved automatically in this browser. Move the pointer or tap near the top to bring the controls back.</p>
+ <p>Your place is saved automatically in this browser. Left/right arrow keys hide the bars while you read. Double-click the artwork to bring them back; single-click and right-click still turn pages. You can also press H or tap near the top.</p>
  <p class="small">Artwork © Matt Rhodes. Images load from ArtStation and require an internet connection. This is an unofficial personal reader.</p>
  <a id="source" target="_blank" rel="noopener">View this page on ArtStation</a>
 </section>
@@ -48,10 +48,11 @@ footer{bottom:0;left:0;right:0;padding:10px 24px 14px;background:var(--bg)}.tran
 'use strict';
 const pages=JSON.parse(document.getElementById('pages').textContent), $=id=>document.getElementById(id);
 const stage=$('stage'),art=$('art'),help=$('help');
-let index=0,loadToken=0,hideTimer,loadTimer,zoomed=false,touchStart=null,suppressClickUntil=0;
+let index=0,loadToken=0,hideTimer,loadTimer,zoomed=false,touchStart=null,suppressClickUntil=0,readingMode=false,clickTimer,clickStart=0;
 let initial=1;try{initial=Number(localStorage.getItem('tellurion-page'))||1;}catch{}
 const hash=location.hash.match(/^#page=(\d+)$/);if(hash)initial=Number(hash[1]);
-function wake(){document.body.classList.remove('quiet');clearTimeout(hideTimer);hideTimer=setTimeout(()=>{if(help.hidden&&!document.querySelector('.chrome :focus-visible'))document.body.classList.add('quiet');},3200);}
+function hideControls(){readingMode=true;clearTimeout(hideTimer);if(document.activeElement.closest('.chrome'))document.activeElement.blur();document.body.classList.add('quiet','reading');}
+function wake(){readingMode=false;document.body.classList.remove('quiet','reading');clearTimeout(hideTimer);hideTimer=setTimeout(()=>{if(help.hidden&&!document.querySelector('.chrome :focus-visible'))document.body.classList.add('quiet');},3200);}
 function setHelp(open){help.hidden=!open;$('helpToggle').setAttribute('aria-expanded',String(open));wake();if(open)$('closeHelp').focus();else $('helpToggle').focus();}
 function imageURL(p){return p.image.replace('/large/','/4k/');}
 function show(n){
@@ -72,7 +73,7 @@ function show(n){
  const img=new Image();
  img.onload=()=>{if(token!==loadToken)return;clearTimeout(loadTimer);art.src=img.src;art.alt='Tellurion — page '+p.number+' by Matt Rhodes';stage.classList.remove('loading');$('message').hidden=true;$('announce').textContent='Page '+p.number+' of '+pages.length;for(const offset of [-1,1]){const adjacent=pages[index+offset];if(adjacent){const pre=new Image();pre.src=imageURL(adjacent);}}};
  img.onerror=()=>{if(token!==loadToken)return;if(attempt++===0)img.src=p.image;else failed();};
- img.referrerPolicy='no-referrer';img.src=imageURL(p);wake();
+ img.referrerPolicy='no-referrer';img.src=imageURL(p);if(!readingMode)wake();
 }
 function turn(delta){if(index+delta<0||index+delta>=pages.length)return;show(index+delta);}
 function toggleZoom(){zoomed=!zoomed;stage.classList.toggle('zoom',zoomed);$('zoom').setAttribute('aria-pressed',String(zoomed));$('zoom').querySelector('.tool-label').textContent=zoomed?'Fit page':'Fit width';stage.scrollTop=0;wake();}
@@ -81,18 +82,21 @@ $('prev').onclick=()=>turn(-1);$('next').onclick=()=>turn(1);$('retry').onclick=
 $('zoom').onclick=toggleZoom;$('fullscreen').onclick=fullscreen;$('helpToggle').onclick=()=>setHelp(help.hidden);$('closeHelp').onclick=()=>setHelp(false);
 $('page').addEventListener('change',e=>show(Number(e.target.value)-1));$('page').addEventListener('keydown',e=>{if(e.key==='Enter'){show(Number(e.target.value)-1);e.target.blur();}});
 $('scrubber').addEventListener('input',e=>show(Number(e.target.value)-1));
-stage.addEventListener('click',e=>{if(Date.now()<suppressClickUntil)return;if(!help.hidden){setHelp(false);return;}if(zoomed){wake();return;}turn(1);});
-stage.addEventListener('contextmenu',e=>{e.preventDefault();if(help.hidden)turn(-1);else setHelp(false);});
+stage.addEventListener('click',e=>{if(Date.now()<suppressClickUntil)return;clearTimeout(clickTimer);if(e.detail>1)return;clickStart=index;if(!help.hidden){setHelp(false);return;}if(zoomed)return;clickTimer=setTimeout(()=>turn(1),350);});
+stage.addEventListener('dblclick',e=>{e.preventDefault();clearTimeout(clickTimer);wake();if(index!==clickStart)show(clickStart);});
+stage.addEventListener('contextmenu',e=>{e.preventDefault();clearTimeout(clickTimer);if(help.hidden)turn(-1);else setHelp(false);});
 stage.addEventListener('pointerdown',e=>{if(e.pointerType==='touch')touchStart={x:e.clientX,y:e.clientY};});
 stage.addEventListener('pointerup',e=>{if(e.pointerType!=='touch'||!touchStart)return;const dx=e.clientX-touchStart.x,dy=e.clientY-touchStart.y;touchStart=null;suppressClickUntil=Date.now()+500;if(zoomed){wake();return;}if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.3)turn(dx<0?1:-1);else if(Math.abs(dx)<15&&Math.abs(dy)<15){if(e.clientY<100)wake();else if(!help.hidden)setHelp(false);else turn(e.clientX<innerWidth/3?-1:1);}});
 stage.addEventListener('pointercancel',()=>touchStart=null);
-document.addEventListener('pointermove',e=>{if(e.pointerType==='mouse')wake();});
+document.addEventListener('pointermove',e=>{if(e.pointerType==='mouse'&&!readingMode)wake();});
+document.addEventListener('focusin',e=>{if(e.target.closest('.chrome')&&e.target.matches(':focus-visible'))wake();});
 document.addEventListener('keydown',e=>{
  if(e.ctrlKey||e.metaKey||e.altKey||e.target.matches('input,textarea,select'))return;
  if(e.key==='Escape'){if(!help.hidden)setHelp(false);wake();return;}
  if(!help.hidden){if(e.key==='?'||e.key.toLowerCase()==='h')setHelp(false);return;}
  if(e.target.closest('button,a')&&(e.key===' '||e.key==='Enter'))return;
- const actions={ArrowRight:()=>turn(1),ArrowLeft:()=>turn(-1),PageDown:()=>turn(1),PageUp:()=>turn(-1),' ':()=>turn(e.shiftKey?-1:1),Home:()=>show(0),End:()=>show(pages.length-1),f:fullscreen,z:toggleZoom,h:()=>{if(!document.body.classList.contains('quiet')&&document.activeElement.closest('.chrome'))document.activeElement.blur();document.body.classList.toggle('quiet');},'?':()=>setHelp(true)};
+ if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();clearTimeout(clickTimer);hideControls();turn(e.key==='ArrowRight'?1:-1);return;}
+ const actions={PageDown:()=>turn(1),PageUp:()=>turn(-1),' ':()=>turn(e.shiftKey?-1:1),Home:()=>show(0),End:()=>show(pages.length-1),f:fullscreen,z:toggleZoom,h:()=>{if(document.body.classList.contains('quiet'))wake();else hideControls();},'?':()=>setHelp(true)};
  const action=actions[e.key]||actions[e.key.toLowerCase()];if(action){e.preventDefault();action();}
 });
 document.addEventListener('fullscreenchange',()=>{$('fullscreen').setAttribute('aria-label',document.fullscreenElement?'Exit full screen':'Enter full screen');wake();});
@@ -100,5 +104,6 @@ window.addEventListener('hashchange',()=>{const m=location.hash.match(/^#page=(\
 show(initial-1);
 </script>
 </body></html>
+
 
 
